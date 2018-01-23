@@ -1,8 +1,10 @@
 <html>
 <body>
 <script>
-    window.navigator.vibrate(1000);
-    window.navigator.vibrate([1000]);
+import AudioToolbox.AudioServices
+
+AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
 </script>
 </body>
 </html>
