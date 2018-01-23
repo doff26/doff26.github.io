@@ -1,7 +1,8 @@
 <html>
 <body>
+  #import <AudioToolbox/AudioServices.h>
 <script>
-import AudioToolbox.AudioServices
+import AudioToolbox.framework
 
 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
