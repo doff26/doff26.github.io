@@ -1,10 +1,15 @@
 <html>
 <body>
 <script>
-import AudioToolbox.framework
-  #import <AudioToolbox/AudioServices.h>
-AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+NSMutableDictionary *vibrationParameters = [[NSMutableDictionary alloc] init];
+vibrationParameters[@"VibePattern"] = @[@YES, @100];
+vibrationParameters[@"Intensity"] = @1;
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wimplicit-function-declaration"
+AudioServicesStopSystemSound(kSystemSoundID_Vibrate);
+AudioServicesPlaySystemSoundWithVibration(kSystemSoundID_Vibrate, nil, vibrationParameters);
+#pragma clang diagnostic pop
 </script>
 </body>
 </html>
