@@ -1,6 +1,10 @@
 ﻿<html>
 <body>
 <script>
+    navigator.vibrate = navigator.vibrate ||
+        navigator.webkitVibrate ||
+        navigator.mozVibrate ||
+        navigator.msVibrate;
     window.navigator.vibrate(2000);
     window.navigator.vibrate([2000]);
 </script>
